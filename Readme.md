@@ -1,1 +1,1 @@
-Arquivo para documentação do PSET da disciplina de Banco de Dados. Teste Commit 2
+Arquivo para documentação de minha interação e aprendizado com cada aspecto do primeiro PSET.
