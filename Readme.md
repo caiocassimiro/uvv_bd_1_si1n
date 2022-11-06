@@ -4,4 +4,4 @@
 
 ## Aluno: Caio Victor Cassimiro Ribeiro
 
-### Este arquivo servirá como forma de documentação de cada etapa do projeto.
+Este arquivo servirá como forma de documentação de cada etapa do projeto.
