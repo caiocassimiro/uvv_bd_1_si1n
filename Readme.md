@@ -16,7 +16,8 @@ Este arquivo servirá como forma de documentação de cada etapa do desenvolvime
 
 * Desenvolver as habilidades de detecção de erros a partir de um modelo de Banco de Dados já projetado.
 
-* Criação de Modelos de Bancos de Dados através da ferramenta SQL Power Architect.
+* Criação de Modelos de Bancos de Dados através da ferramenta **SQL Power Architect**.
 
 * Produzir *Scripts* que são responsáveis por efetuar a criação de tabelas, relacionamentos, inserção de dados nos SGBDs **PostgreSQL** e o **MariaDB/MySQL**.
 
+> Área do documento destinada ao detalhamento de minha compreensão de cada aplicação ou conhecimento utilizado no desenvolvimento do trabalho.
