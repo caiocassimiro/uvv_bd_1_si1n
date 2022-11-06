@@ -20,4 +20,6 @@ Este arquivo servirá como forma de documentação de cada etapa do desenvolvime
 
 * Produzir *Scripts* que são responsáveis por efetuar a criação de tabelas, relacionamentos, inserção de dados nos SGBDs **PostgreSQL** e o **MariaDB/MySQL**.
 
-> Área do documento destinada ao detalhamento de minha compreensão de cada aplicação ou conhecimento utilizado no desenvolvimento do trabalho.
+
+
+>A área abaixo do documento será destinada ao detalhamento de minha compreensão de cada aplicação ou conhecimento utilizado no desenvolvimento do trabalho.
