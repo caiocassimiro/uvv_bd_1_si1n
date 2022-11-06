@@ -1,0 +1,1 @@
+Arquivo para documentação do PSET da disciplina de Banco de Dados.
