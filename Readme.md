@@ -31,3 +31,7 @@ Esta aplicação se trata de um Sistema de Versionamento. É indispensável para
 ## GITHUB
 
 O Github, se trata de um aplicação que é utilizada, em conjunto com o GIT, para que os arquivos sejam disponibilizados publicamente através de repositórios. É de grande serventia para os desenvolvedores, pois além de promover um ambiente de colaboração entre usuários, pode ser usado como portfólio de projetos. É quase como um cartão de visitas para grandes instituições interessadas em contratar novos desenvolvedores.
+
+## Markdown
+
+É uma linguagem simples para fazer marcações em textos , criar conteúdos para uma página HTML e produzir documentos prontos para impressão. É utilizada em aplicativos como Github e Slack. Usamos para informar pontos importantes de um texto, inserir tópicos, demarcar links e imagens, sem precisar e
