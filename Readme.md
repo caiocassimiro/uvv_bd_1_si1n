@@ -2,7 +2,7 @@
 
 ## **Professor: Abrantes Araujo Silva Filho**
 
-## **Aluno: Caio Victor Cassimiro Ribeiro**
+## **Aluno: Caio Victor Cassimiro Ribeiro**s
 
 Este arquivo servirá como forma de documentação de cada etapa do desenvolvimento do projeto.
 
