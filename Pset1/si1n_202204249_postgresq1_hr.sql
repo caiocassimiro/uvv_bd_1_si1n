@@ -15,7 +15,7 @@ CREATE TABLE paises (
                 nome VARCHAR(50) NOT NULL,
                 CONSTRAINT paises_pk PRIMARY KEY (id_pais)
 );
--- Comando para criação
+-- Comando para criação de tabela "demar"
 CREATE TABLE departamentos (
                 id_departamento INTEGER NOT NULL,
                 nome VARCHAR(50) NOT NULL,
