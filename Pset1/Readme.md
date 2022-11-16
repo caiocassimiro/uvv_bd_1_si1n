@@ -6,7 +6,7 @@
 
 Este arquivo servirá como forma de documentação de cada etapa do desenvolvimento do projeto.
 
-### Pré-requisitos, conceitos à serem aprendidos e objetivos do trabalho da disciplina:
+### Pré-requisitos e conceitos à serem aprendidos e objetivos do trabalho da disciplina:
 
 * Adquirir primeiramente conhecimento e compreensão da importância dos **Sistemas de Controles de Versões** e o por quê de utilizá-los.
 
@@ -34,4 +34,4 @@ O Github, se trata de um aplicação que é utilizada, em conjunto com o GIT, pa
 
 ## Markdown
 
-É uma linguagem simples para fazer marcações em textos , criar conteúdos para uma página HTML e produzir documentos prontos para impressão. É utilizada em aplicativos como Github e Slack. Usamos para informar pontos importantes de um texto, inserir tópicos, demarcar links e imagens, sem precisar e
+É uma linguagem simples para fazer marcações em textos , criar conteúdos para uma página HTML e produzir documentos prontos para impressão. É utilizada em aplicativos como Github e Slack. Usamos para informar pontos importantes de um texto, inserir tópicos, demarcar links e imagens, sem precisar e 

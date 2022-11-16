@@ -1,9 +1,13 @@
 CREATE ROLE caiocassimiro WITH CREATEDB CREATEROLE;
 
 CREATE DATABASE uvv WITH OWNER caiocassimiro TEMPLATE = TEMPLATE0 ENCODING='UTF-8' LC_COLLATE='pt_BR.UTF-8' LC_CTYPE='pt_BR.UTF-8' ALLOW_CONNECTIONS = true;
-
+\c uvv; 
 create schema if not exist authorization caiocassimiro;
 
+SET SEARCH_PATH TO hr, "$user", public;
+
+ALTER USER caiocassimiro
+SET SEARCH_PATH TO hr, "$user", public;
 
 CREATE TABLE paises (
                 id_pais CHAR(2) NOT NULL,
@@ -11,7 +15,7 @@ CREATE TABLE paises (
                 nome VARCHAR(50) NOT NULL,
                 CONSTRAINT paises_pk PRIMARY KEY (id_pais)
 );
-
+-- Comando para criação
 CREATE TABLE departamentos (
                 id_departamento INTEGER NOT NULL,
                 nome VARCHAR(50) NOT NULL,
@@ -175,55 +179,55 @@ INSERT INTO regioes (id_regiao, nome)
 VALUES (4, 'Middle East and Africa' );
 
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('AR', 'Argentina', 2 );
+VALUES ('AR', 'Argentina', 2 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('AU', 'Australia', 3 );
+VALUES ('AU', 'Australia', 3 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('BE', 'Belgium', 1 );
+VALUES ('BE', 'Belgium', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('BR', 'Brazil', 2 );
+VALUES ('BR', 'Brazil', 2 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('CA', 'Canada', 2 );
+VALUES ('CA', 'Canada', 2 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('CH', 'Switzerland', 1 );
+VALUES ('CH', 'Switzerland', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('CN', 'China', 3 );
+VALUES ('CN', 'China', 3 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('DE', 'Germany', 1 );
+VALUES ('DE', 'Germany', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('DK', 'Denmark', 1 );
+VALUES ('DK', 'Denmark', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('EG', 'Egypt', 4 );
+VALUES ('EG', 'Egypt', 4 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('FR', 'France', 1 );
+VALUES ('FR', 'France', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('IL', 'Israel', 4 );
+VALUES ('IL', 'Israel', 4 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('IN', 'India', 3 );
+VALUES ('IN', 'India', 3 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('IT', 'Italy', 1 );
+VALUES ('IT', 'Italy', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('JP', 'Japan', 3 );
+VALUES ('JP', 'Japan', 3 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('KW', 'Kuwait', 4 );
+VALUES ('KW', 'Kuwait', 4 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('ML', 'Malaysia', 3 );
+VALUES ('ML', 'Malaysia', 3 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('MX', 'Mexico', 2 );
+VALUES ('MX', 'Mexico', 2 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('NG', 'Nigeria', 4 );
+VALUES ('NG', 'Nigeria', 4 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('NL', 'Netherlands', 1 );
+VALUES ('NL', 'Netherlands', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('SG', 'Singapore', 3 );
+VALUES ('SG', 'Singapore', 3 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('UK', 'United Kingdom', 1 );
+VALUES ('UK', 'United Kingdom', 1 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('US', 'United States of America', 2 );
+VALUES ('US', 'United States of America', 2 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('ZM', 'Zambia', 4 );
+VALUES ('ZM', 'Zambia', 4 );
 INSERT INTO paises (id_pais, nome, id_regiao)
-VAlues ('ZW', 'Zimbabwe', 4 );
+VALUES ('ZW', 'Zimbabwe', 4 );
 
 INSERT INTO localizacoes (id_localizacao, endereco, cep, cidade, uf, id_pais)
 VALUES (1000, '1297 Via Cola di Rie', '00989', 'Roma', 'null', 'IT' );
