@@ -34,4 +34,12 @@ O Github, se trata de um aplicação que é utilizada, em conjunto com o GIT, pa
 
 ## Markdown
 
-É uma linguagem simples para fazer marcações em textos , criar conteúdos para uma página HTML e produzir documentos prontos para impressão. É utilizada em aplicativos como Github e Slack. Usamos para informar pontos importantes de um texto, inserir tópicos, demarcar links e imagens, sem precisar e 
+É uma linguagem simples para fazer marcações em textos , criar conteúdos para uma página HTML e produzir documentos prontos para impressão. É utilizada em aplicativos como Github e Slack. Usamos para informar pontos importantes de um texto, inserir tópicos, demarcar links e imagens, sem precisar editar a página HTML necessariamente.
+
+## Construção do Modelo usando SQL Power Arquitect e corrigindo erros do projeto
+
+Inicialmente, realizei a interpretação do projeto através do modelo já disponibilizado para correção de erros e criar o modelo ideal. Foi possível identificar erros como duplo relacionamento entre duas tabelas, cardinalidade incoerente com o relacionamento e relacionamentos criados de forma incorreta. Após corrigir estes erros e gerar o modelo expresso no arquivo "si1n_202204249_hr.architect", um script para criação das tabelas, constraints e relacionamentos em SQL é gerado para que não seja necessário digitar os comandos para criação destes elementos. Isso é uma mão na roda, principalmente para projetos muito grandes. A principal proposta desta aplicação é otimizar o tempo.
+
+## Implementação do Script e Reflexão da trajetória do projeto
+
+Primeiramente, foi preciso aprender as particularidades de cada SGBD para que fosse possível adaptar o script para rodá-lo no SGBD em questão. Para isso, foi necessário acessar a documentação dos dois sistemas de gerenciamento. Através desse projeto, foi possível observar as diferenças, tanto de recursos, quanto de restrições. Por exemplo, o PostgreSQL apresenta mais recursos para o desenvolvedor e além disso, é gratuito. Já o MariaDB, é mais tolerável à diferenças de escrita, porém não apresenta uma diversidade de funcionalidades como o PostgreSQL.
