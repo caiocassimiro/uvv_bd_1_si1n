@@ -810,46 +810,45 @@ FOREIGN KEY (id_regiao)
 REFERENCES regioes (id_regiao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
-NOT DEFERRABLE;
+
 
 ALTER TABLE localizacoes ADD CONSTRAINT paises_localizacoes_fk
 FOREIGN KEY (id_pais)
 REFERENCES paises (id_pais)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
-NOT DEFERRABLE;
+
 
 ALTER TABLE empregados ADD CONSTRAINT departamentos_empregados_fk
 FOREIGN KEY (id_departamento)
 REFERENCES departamentos (id_departamento)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
-NOT DEFERRABLE;
+
 
 ALTER TABLE localizacoes ADD CONSTRAINT departamentos_localizacoes_fk
 FOREIGN KEY (id_departamento)
 REFERENCES departamentos (id_departamento)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
-NOT DEFERRABLE;
+
 
 ALTER TABLE empregados ADD CONSTRAINT cargos_empregados_fk
 FOREIGN KEY (id_cargo)
 REFERENCES cargos (id_cargo)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
-NOT DEFERRABLE;
+
 
 ALTER TABLE historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk
 FOREIGN KEY (id_cargo)
 REFERENCES cargos (id_cargo)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
-NOT DEFERRABLE;
+
 
 ALTER TABLE historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk
 FOREIGN KEY (_id_empregado)
 REFERENCES empregados (_id_empregado)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
-NOT DEFERRABLE;
