@@ -1,10 +1,23 @@
+-- Comando para criação de usuários com permissões de criar database e role
+
 CREATE ROLE caiocassimiro WITH CREATEDB CREATEROLE;
 
+-- Comando para criar bando de dados "uvv"
+
 CREATE DATABASE uvv WITH OWNER caiocassimiro TEMPLATE = TEMPLATE0 ENCODING='UTF-8' LC_COLLATE='pt_BR.UTF-8' LC_CTYPE='pt_BR.UTF-8' ALLOW_CONNECTIONS = true;
+
+-- Comando para conectar ao banco de dados criado
 \c uvv; 
-create schema if not exist authorization caiocassimiro;
+
+-- Comando para criar esquema e permitir acesso ao usuário "caiocassimiro"
+
+create schema if not exist hr authorization caiocassimiro;
+
+-- Comando para alterar usuário padrão para o esquema hr
 
 SET SEARCH_PATH TO hr, "$user", public;
+
+-- Comando para alternar search_path para esquema hr padrão
 
 ALTER USER caiocassimiro
 SET SEARCH_PATH TO hr, "$user", public;

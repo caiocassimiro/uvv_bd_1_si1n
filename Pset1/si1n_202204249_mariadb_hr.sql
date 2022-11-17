@@ -1,5 +1,10 @@
+
+-- Comando para criação de usuário
+
 create user caiocassimiro identified by 'raiz';
+
 -- Comando para criação de Banco de Dados"
+
 create database uvv;
 
 -- Comando que concede privilégios ao usuário em questão no banco de dados "uvv"
