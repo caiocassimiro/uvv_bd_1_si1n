@@ -9,13 +9,16 @@ SET SEARCH_PATH TO hr, "$user", public;
 ALTER USER caiocassimiro
 SET SEARCH_PATH TO hr, "$user", public;
 
+-- Comando para criação de tabela "paises"
+
 CREATE TABLE paises (
                 id_pais CHAR(2) NOT NULL,
                 id_regiao INTEGER NOT NULL,
                 nome VARCHAR(50) NOT NULL,
                 CONSTRAINT paises_pk PRIMARY KEY (id_pais)
 );
--- Comando para criação de tabela "demar"
+-- Comando para criação de tabela "departamentos"
+
 CREATE TABLE departamentos (
                 id_departamento INTEGER NOT NULL,
                 nome VARCHAR(50) NOT NULL,
@@ -23,15 +26,21 @@ CREATE TABLE departamentos (
                 CONSTRAINT departamentos_pk PRIMARY KEY (id_departamento)
 );
 
+-- Comando para criação de índice único para a tabela departamentos
+
 CREATE UNIQUE INDEX departamentos_idx
  ON departamentos
  ( nome );
+
+-- Comando para criação de tabela "regioes"
 
 CREATE TABLE regioes (
                 id_regiao INTEGER NOT NULL,
                 nome VARCHAR(25) NOT NULL,
                 CONSTRAINT regioes_pk PRIMARY KEY (id_regiao)
 );
+
+-- Comando para criação de tabela "localizacoes"
 
 CREATE TABLE localizacoes (
                 id_localizacao INTEGER NOT NULL,
@@ -44,6 +53,8 @@ CREATE TABLE localizacoes (
                 CONSTRAINT localizacoes_pk PRIMARY KEY (id_localizacao)
 );
 
+-- Comando para criação de tabela "cargos"
+
 CREATE TABLE cargos (
                 id_cargo VARCHAR(10) NOT NULL,
                 cargo VARCHAR(35) NOT NULL,
@@ -52,9 +63,13 @@ CREATE TABLE cargos (
                 CONSTRAINT cargos_pk PRIMARY KEY (id_cargo)
 );
 
+-- Comando para criação de índice único para a tabela cargos
+
 CREATE UNIQUE INDEX cargos_idx
  ON cargos
  ( cargo );
+
+-- Comando para criação de tabela "empregados"
 
 CREATE TABLE empregados (
                 _id_empregado INTEGER NOT NULL,
@@ -68,9 +83,14 @@ CREATE TABLE empregados (
                 comissao DECIMAL(4,2) NOT NULL,
                 CONSTRAINT empregados_pk PRIMARY KEY (_id_empregado)
 );
+
+-- Comando para criação de índice único para a tabela cargos
+
 CREATE UNIQUE INDEX empregados_idx
  ON empregados
  ( email );
+
+-- Comando para criação de tabela "historico_cargos"
 
 CREATE TABLE historico_cargos (
                 _id_empregado INTEGER NOT NULL,
@@ -81,12 +101,15 @@ CREATE TABLE historico_cargos (
                 CONSTRAINT historico_cargos_pk PRIMARY KEY (_id_empregado, data_inicial)
 );
 
+-- Comando para criação de chave estrangeira de paises com referência à regioes
 ALTER TABLE paises ADD CONSTRAINT regioes_paises_fk
 FOREIGN KEY (id_regiao)
 REFERENCES regioes (id_regiao)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
+
+-- Comando para criação de chave estrangeira de localizacoes com referência à paises
 
 ALTER TABLE localizacoes ADD CONSTRAINT paises_localizacoes_fk
 FOREIGN KEY (id_pais)
@@ -95,12 +118,16 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+-- Comando para criação de chave estrangeira de empregados com referência à departamentos
+
 ALTER TABLE empregados ADD CONSTRAINT departamentos_empregados_fk
 FOREIGN KEY (id_departamento)
 REFERENCES departamentos (id_departamento)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
+
+-- Comando para criação de chave estrangeira de localizacoes com referência à departamentos
 
 ALTER TABLE localizacoes ADD CONSTRAINT departamentos_localizacoes_fk
 FOREIGN KEY (id_departamento)
@@ -109,12 +136,16 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+-- Comando para criação de chave estrangeira de empregados com referência à cargos
+
 ALTER TABLE empregados ADD CONSTRAINT cargos_empregados_fk
 FOREIGN KEY (id_cargo)
 REFERENCES cargos (id_cargo)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
+
+-- Comando para criação de chave estrangeira de historico_cargos com referência à cargos
 
 ALTER TABLE historico_cargos ADD CONSTRAINT cargos_historico_cargos_fk
 FOREIGN KEY (id_cargo)
@@ -123,12 +154,16 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+-- Comando para criação de chave estrangeira de historico_cargos com referência à empregados
+
 ALTER TABLE historico_cargos ADD CONSTRAINT empregados_historico_cargos_fk
 FOREIGN KEY (_id_empregado)
 REFERENCES empregados (_id_empregado)
 ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
+
+-- Comando para realizar inserção de dados na tabela "cargos"
 
 INSERT INTO cargos (id_cargo, cargo, salario_minimo, salario_maximo)
 VALUES ('AD_PRES', 'President', 20080, 40000);
@@ -169,6 +204,8 @@ VALUES ('HR_REP', 'Human Resources Representative', 4000, 9000);
 INSERT INTO cargos (id_cargo, cargo, salario_minimo, salario_maximo)
 VALUES ('PR_REP', 'Public Relations Representative', 4500, 10500);
 
+-- Comando para realizar inserção de dados na tabela "regioes"
+
 INSERT INTO regioes (id_regiao, nome) 
 VALUES (1, 'Europe' );
 INSERT INTO regioes (id_regiao, nome) 
@@ -177,6 +214,8 @@ INSERT INTO regioes (id_regiao, nome)
 VALUES (3, 'Asia' );
 INSERT INTO regioes (id_regiao, nome) 
 VALUES (4, 'Middle East and Africa' );
+
+-- Comando para realizar inserção de dados na tabela "paises"
 
 INSERT INTO paises (id_pais, nome, id_regiao)
 VALUES ('AR', 'Argentina', 2 );
@@ -229,6 +268,8 @@ VALUES ('ZM', 'Zambia', 4 );
 INSERT INTO paises (id_pais, nome, id_regiao)
 VALUES ('ZW', 'Zimbabwe', 4 );
 
+-- Comando para realizar inserção de dados na tabela "localizacoes"
+
 INSERT INTO localizacoes (id_localizacao, endereco, cep, cidade, uf, id_pais)
 VALUES (1000, '1297 Via Cola di Rie', '00989', 'Roma', 'null', 'IT' );
 INSERT INTO localizacoes (id_localizacao, endereco, cep, cidade, uf, id_pais)
@@ -275,6 +316,8 @@ INSERT INTO localizacoes (id_localizacao, endereco, cep, cidade, uf, id_pais)
 VALUES (3100, 'Pieter Breughelstraat 837', '3029SK', 'Utrecht', 'Utrecht', 'NL' );
 INSERT INTO localizacoes (id_localizacao, endereco, cep, cidade, uf, id_pais)
 VALUES (3200, 'Mariano Escobedo 9991', '11932', 'Mexico City', 'Distrito Federal,', 'MX' );
+
+-- Comando para realizar inserção de dados na tabela "departamentos"
 
 INSERT INTO departamentos (id_departamento, nome, id_localizacao, id_gerente)
 VALUES (10, 'Administration',
@@ -384,6 +427,8 @@ INSERT INTO departamentos (id_departamento, nome, id_localizacao, id_gerente)
 VALUES (270, 'Payroll',
  1700,
  null);
+
+ -- Comando para realizar inserção de dados na tabela "empregados"
 
 INSERT INTO empregados (id_empregado, nome, email, 
 telefone, data_contratacao, id_cargo, salario, 
@@ -813,6 +858,8 @@ INSERT INTO empregados (id_empregado, nome, email,
 telefone, data_contratacao, id_cargo, salario, 
 comissao, id_departamento, id_supervisor) VALUES 
 (206, 'William Gietz', 'WGIETZ', '515.123.8181', '2002-06-07', 'AC_ACCOUNT', 8300, null, 110, 205);
+
+-- Comando para realizar inserção de dados na tabela "historico_cargos"
 
 INSERT INTO historico_cargos (Id_empregado, data_inicial, data_final, id_cargo, id_departamento)
 VALUES (102, '2001-01-13', '2006-07-24',
